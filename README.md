@@ -28,7 +28,7 @@
 | status_id          | integer    | null: false       |
 | delivery_charge_id | integer    | null: false       |
 | area_id            | integer    | null: false       |
-| days_id            | integer    | null: false       |
+| delivery_day_id    | integer    | null: false       |
 | price              | integer    | null: false       |
 | user               | references | foreign_key: true |
 
