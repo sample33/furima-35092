@@ -11,4 +11,5 @@ class Item < ApplicationRecord
   validates    :title, :description, :category_id, :status_id, :delivery_charge_id, :area_id, :delivery_day_id, :price, :image,     presence: true
   validates    :category_id, :status_id, :delivery_charge_id, :area_id, :delivery_day_id,     numericality: { other_than: 1 }
   validates_inclusion_of :price, in: 300..9_999_999
+  validates    :price,      numericality: { only_integer: true }
 end
