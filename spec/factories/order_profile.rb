@@ -5,7 +5,7 @@ FactoryBot.define do
     area_id        {2}
     city           {"市町村"}
     address        {"住所1-1"}
-    building       {""}
+    building       {"青木ビル"}
     tel            {"01234567890"}
   end
 end

@@ -12,6 +12,11 @@ RSpec.describe Profile, type: :model do
         it "building以外の全ての項目の入力が存在すれば登録できる" do
           expect(@order_profile).to be_valid
         end
+        it "buildingが空でも登録できる" do
+          @order_profile.building = nil
+          @order_profile.valid?
+          expect(@order_profile).to be_valid
+        end
     end
 
     context "新規登録できないとき" do
