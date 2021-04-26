@@ -6,7 +6,7 @@ class OrderProfile
     validates :tel, numericality: {only_integer: true}
     validates :area_id, :city, :address, :user_id, :item_id, :token
     validates :zip, format: {with: /\A\d{3}[-]\d{4}\z/}
-    validates :tel, format: {with: /\A\d{11}\z/}
+    validates :tel, format: {with: /\A\d{10,11}\z/}
     validates :area_id, numericality: { other_than: 1 }
   end
 

@@ -84,8 +84,8 @@ RSpec.describe Profile, type: :model do
         @order_profile.valid?
         expect(@order_profile.errors.full_messages).to include("Tel is not a number")
       end
-      it "telが10桁だと登録できない" do
-        @order_profile.tel = '1234567890'
+      it "telが9桁だと登録できない" do
+        @order_profile.tel = '123456789'
         @order_profile.valid?
         expect(@order_profile.errors.full_messages).to include("Tel is invalid")
       end
@@ -99,6 +99,18 @@ RSpec.describe Profile, type: :model do
         @order_profile.token = nil
         @order_profile.valid?
         expect(@order_profile.errors.full_messages).to include("Token can't be blank")
+      end
+
+      it "userが空では登録できないこと" do
+        @order_profile.user_id = nil
+        @order_profile.valid?
+        expect(@order_profile.errors.full_messages).to include("User can't be blank")
+      end
+
+      it "itemが空では登録できないこと" do
+        @order_profile.item_id = nil
+        @order_profile.valid?
+        expect(@order_profile.errors.full_messages).to include("Item can't be blank")
       end
     end
   end
